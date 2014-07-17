@@ -21,14 +21,13 @@ public class EnviaEmail {
     String miContraseña = "kradacloja";
     String servidorSMTP = "smtp.gmail.com";
     String puertoEnvio = "465";
-    String mailReceptor;
+    
     String asunto;
     String cuerpo;
 
     //metodo que recibe y envia el email
-    public boolean EnviaEmail(String mailReceptor, String asunto, String cuerpo) {
+    public boolean EnviaEmail(String mailReceptor[], String asunto, String cuerpo) {
         boolean res = false;
-        this.mailReceptor = mailReceptor;
         this.asunto = asunto;
         this.cuerpo = cuerpo;
         Properties props = new Properties();//propiedades a agragar
@@ -40,6 +39,7 @@ public class EnviaEmail {
         props.put("mail.smtp.socketFactory.port", puertoEnvio);//activar el puerto
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
+       
 
         SecurityManager security = System.getSecurityManager();
 
@@ -52,7 +52,9 @@ public class EnviaEmail {
             msg.setText(this.cuerpo);//seteo el cuertpo del mensaje
             msg.setSubject(this.asunto);//setea asusto (opcional)
             msg.setFrom(new InternetAddress(this.miCorreo));//agrega la la propiedad del correo origen
-            msg.addRecipient(Message.RecipientType.TO, new InternetAddress(this.mailReceptor));//agrega el destinatario
+            for (String cadaEmail : mailReceptor) {
+                msg.addRecipient(Message.RecipientType.TO, new InternetAddress(cadaEmail)); //agrega el destinatario
+            }          
             Transport.send(msg);//envia el mensaje
             res = true;
         } catch (MessagingException mex) {//en caso de que ocurra un error se crea una excepcion
@@ -61,8 +63,7 @@ public class EnviaEmail {
         return res;
     }
 
-    private class autentificadorSMTP extends javax.mail.Authenticator {
-
+    private class autentificadorSMTP extends Authenticator {
         @Override
         public PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication(miCorreo, miContraseña);//autentifica tanto el correo como la contraseña
@@ -133,19 +134,7 @@ public class EnviaEmail {
     }
 
     public boolean enviaAVarios(String correos[], String asunto, String mensaje) {
-        int num = 0;
-        boolean res = false;
-        for (int i = 0; i < correos.length; i++) {
-            if (EnviaEmail(correos[i], asunto, mensaje)) {
-                num++;
-            } else {
-                System.err.println("\tCorreo no enviado a " + correos[i]);
-            }
-        }
-        if (num == correos.length) {
-            res = true;
-        }
-        return res;
+         return EnviaEmail(correos, asunto, mensaje);
     }
 
     public String obtieneHost() {
