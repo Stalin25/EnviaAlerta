@@ -24,19 +24,31 @@ public class Main {
     public static void main(String[] args) {
         EnviaEmail e = new EnviaEmail();
         String datos[] = e.archivoAArreglo();
-        if (!datos[3].equals("Can not connect to port")) {
+        Alerta a = new Alerta();
+        a.setResultado(datos[3]);
+        a.setCorreos(datos[0].split(","));
+        a.setAsunto(datos[1]);
+        a.setResultado(datos[2]);
+        
+        if (!a.getResultado().equals("Can not connect to port") && !a.getResultado().equals("Request timed out. 50% losses.")) {
             System.err.print("Mensaje a enviar:\n");
-            if (e.enviaAVarios(datos[0].split(","), datos[1], datos[2])) {
-                System.out.println(datos[2] + "\n");
+            String mensajeListo = mensajeEnviar(a);
+            if (e.enviaAVarios(a.getCorreos(), a.getAsunto(), mensajeListo)) {
+                System.out.println(mensajeListo + "\n");
                 visualizaDialogo(null, "Correo(s) enviado(s) correctamente", "Mensaje enviado", 1000);
             } else {
-                System.out.println(datos[2] + "\n");
+                System.out.println(mensajeListo + "\n");
                 System.out.println(new Date());
                 JOptionPane.showMessageDialog(null, "Problemas al enviar correo eléctronico,");
-                
             }
         }
         System.exit(0);
+    }
+
+    public static String mensajeEnviar(Alerta a) {
+        String mensaje;
+        mensaje = a.getResultado();
+        return mensaje;
     }
 
     public static void visualizaDialogo(Component padre, String texto, String titulo, final long timeout) {

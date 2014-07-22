@@ -1,3 +1,3 @@
-Para:    diego.romero@kradac.com,diegoacuario11@gmail.com
+Para:    diego.romero@kradac.com
 Mensaje: 
-[14/07/2014 18:08:05]	El monitor ICMP 190.12.61.30 @ SERVIDOR 190.12.61.30 [190.12.61.30:0] cambió su color a RED. Resultado: <>Request timed out. 50% losses.<> Fecha: [14.07.2014 18:08:05] ; Descripción: ICMP 190.12.61.30
+[22/07/2014 11:45:24]	<th align='right'>Servicio:</th><td>TCP 21</td><tr><th align='right'>Dispositivo:</th><td>SERVIDOR 200.0.29.117</td><tr><th align='right'>Nombre de equipo:</th><td>KRADAC-PC</td><tr><th align='right'>Ip local:</th><td>172.16.17.214</td><tr><th align='right'>Puerto:</th><td>25</td><tr><th align='right'>Color:</th><td>RED</td><tr><th align='right'>Resultado:</th><td>'Connect timed out.'</td></table>;Descripción: SERVIDOR FILEZILLA CAIDO
