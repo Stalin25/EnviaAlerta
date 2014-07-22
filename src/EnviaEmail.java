@@ -103,7 +103,7 @@ public class EnviaEmail {
             if (!par.isEmpty()) {
                 para = par;
                 para = para.split(":")[1];
-                if (new Date().getHours() == 15) {
+                if (new Date().getMinutes()<15) {
                     escribir("src\\datos.tnm", "Para: " + para + "\nMensaje: ");
                 }
             }
@@ -132,7 +132,7 @@ public class EnviaEmail {
             datos[0] = para;
             datos[1] = asun;
             datos[2] = men;
-            String resultado = men.split("'")[1];
+            String resultado = men.split("'")[17];
             datos[3] = resultado;
             entrada.close();   // Cerramos el archivo
         } catch (IOException e) { //Catch de excepciones

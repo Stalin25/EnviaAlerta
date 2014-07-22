@@ -25,12 +25,11 @@ public class Main {
         EnviaEmail e = new EnviaEmail();
         String datos[] = e.archivoAArreglo();
         Alerta a = new Alerta();
-        a.setResultado(datos[3]);
+        //a.setResultado(datos[3]);
         a.setCorreos(datos[0].split(","));
         a.setAsunto(datos[1]);
         a.setResultado(datos[2]);
-        
-        if (!a.getResultado().equals("Can not connect to port") && !a.getResultado().equals("Request timed out. 50% losses.")) {
+        if (!datos[3].equals("Can not connect to port") && !datos[3].equals("Request timed out. 50% losses.")) {
             System.err.print("Mensaje a enviar:\n");
             String mensajeListo = mensajeEnviar(a);
             if (e.enviaAVarios(a.getCorreos(), a.getAsunto(), mensajeListo)) {
