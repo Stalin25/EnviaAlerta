@@ -100,22 +100,21 @@ public class EnviaEmail {
             while ((strLinea = buffer.readLine()) != null) {     // Leer el archivo linea por linea
                 men += strLinea + "\n";      // Agregamos la línea en la variable men
             }
-            if (!par.isEmpty()) {
-                para = par;
-                para = para.split(":")[1];
-                if (new Date().getMinutes()<15) {
-                    escribir("src\\datos.tnm", "Para: " + para + "\nMensaje: ");
-                }
-            }
 
             String lin[] = men.split(":");
             men = lin[1];
             for (int i = 2; i < lin.length; i++) {
                 men += ":" + lin[i];
             }
-
             lin = men.split("\n");
             men = lin[lin.length - 1];
+            if (!par.isEmpty()) {
+                para = par;
+                para = para.split(":")[1];
+                if (new Date().getMinutes() < 15) {
+                    escribir("src\\datos.tnm", "Para:" + para + "\nMensaje:" + men+"\n");
+                }
+            }
 
             if (!men.split(";")[1].split(":")[1].equals(" ")) {
                 asun = men.split(";")[1].split(":")[1];

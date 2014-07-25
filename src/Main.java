@@ -21,7 +21,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         EnviaEmail e = new EnviaEmail();
         String datos[] = e.archivoAArreglo();
         Alerta a = new Alerta();
@@ -29,9 +29,11 @@ public class Main {
         a.setCorreos(datos[0].split(","));
         a.setAsunto(datos[1]);
         a.setResultado(datos[2]);
-        if (!datos[3].equals("Can not connect to port") && !datos[3].equals("Request timed out. 50% losses.")) {
+        if (!datos[3].equals("Request timed out. 50% losses.")) {
+//        if (!datos[3].equals("Can not connect to port") && !datos[3].equals("Request timed out. 50% losses.")) {
             System.err.print("Mensaje a enviar:\n");
             String mensajeListo = mensajeEnviar(a);
+            Thread.sleep(1000);
             if (e.enviaAVarios(a.getCorreos(), a.getAsunto(), mensajeListo)) {
                 System.out.println(mensajeListo + "\n");
                 visualizaDialogo(null, "Correo(s) enviado(s) correctamente", "Mensaje enviado", 1000);
