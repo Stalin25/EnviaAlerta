@@ -1,0 +1,45 @@
++---------------+
+|Configuración: |
++---------------+	
+
+1. Copia la carpeta Alertas en el disco C:
+2. Crea el numero de alertas que desees copiando la carpeta alerta1 y el archivo alerta1.bat
+3. Modifica cada uno de los archivo .bat la cambias alerta1 por el nombre de la carpeta puede ser alerta2, alerta3,...
+4. Debes transformar el bat en exe de la siguiente manera:
+	Presionas Windows + R
+	Escribes iexpress
+	Siguiente	
+	Siguiente
+	Escribanle un Nombre Cualquiera. EL nombre del .exe es el que le pondra(Puede ser el mismo del bat)
+	Siguiente
+	Siguiente
+	Aca elejimos el archivo BAT. 
+	Siguiente
+	Elijen en Install Program, El BAT que pusimos
+	Siguiente
+	Siguiente
+	Esriben donde guardar el EXE(Utilize la misma ubicacion del bat C:\Alertas\alerta1.exe)
+	Siguiente
+	Siguiente
+	Siguiente
+	Siguiente
+	Finalizar
+5. Abre la carpeta  alerta1/src y abre el archivo datos.tnm(Colocas las siguientes dos lineas):
+	Para: Aquí separados por comas los correos a quien se enviara esta alerta.
+	Mensaje: 
+6. Luego le das doble clic al .exe para probar y listo a configurar el TNM
+
+		
++-------------------------+
+|Configuración en el TNM: |
++-------------------------+	
+
+1. Agregas la tarea Escribir en archivo de registro a cada monitor y donde dic eescribir en el arhivo colocas C:\Alertas\alerta1\src\datos.tnm
+2. En la pestaña comun en la configuración de la tarea colocas:
+	
+<th align='right'>Servicio:</th><td>%MONITOR_NAME%</td><tr><th align='right'>Dispositivo:</th><td>%DEVICE_NAME%</td><tr><th align='right'>Nombre de equipo:</th><td>%HOST_NAME%</td><tr><th align='right'>Ip local:</th><td>%IP_ADDRESS%</td><tr><th align='right'>Puerto:</th><td>%PORT%</td><tr><th align='right'>Color:</th><td>%MONITOR_COLOR%</td><tr><th align='right'>Resultado:</th><td>'%RESULT%'</td></table>;Descripción: %DESCRIPTION%
+
+3. Agregas la tarea Iniciar aplicación y en archivo escrives las dirección del .exe por ejemplo C:\Alertas\alerta1.exe
+	Nota: En cada monitor en la parte común en el campo descripción es el asunto que del mensaje de correo, llenar el campo
+
+KRADAC CIA. LTDA. 
