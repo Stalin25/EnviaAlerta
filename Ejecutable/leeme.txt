@@ -1,0 +1,4 @@
+Abre la carpeta src y en abre el archivo datos.tnm(Colocas las siguientes dos lineas):
+
+Para: Aquí separados por comas los correos a quien se enviara esta alerta.
+Mensaje: 

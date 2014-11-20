@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <NetProject version="3">
+    <Group id="6" xpos="226" ypos="102" name="KRADAC" groupType="1">
+      <Device id="7" xpos="578" ypos="265" cnnCount="0" devType="0" name="SERVIDOR DALTON 117" autoResolve="0" hostname="kradac-pc" ipAddress="172.18.242.12">
+        <Monitor id="8" name="TCP 3306" descr="MySQL en la 200.0.29.117 ENVIADO DESDE DESDE PC DE PRUEBAS(77)" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="3306"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="12" name="TCP 8080" descr="Acceso web para la 117 (Empresas de taxis acceden) ENVIADO DESDE DESDE PC DE PRUEBAS(77)" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="8080"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="21" name="Acceso HTTP" descr="Acceso HTTP (Servidor Web) ENVIADO DESDE DESDE PC DE PRUEBAS(77)" type="HTTP" interval="180" timeout="3" state="1">
+          <Probe all="true" contain="true" request="http://172.16.17.214:8080/Inicio/" searchString="" serverPort="80"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="43" name="GlashFish" descr="Servidor GlashFish para Aplicaciones Android ENVIADO DESDE DESDE PC DE PRUEBAS(77)" type="HTTP" interval="180" timeout="3" state="1">
+          <Probe all="true" contain="true" request="http://172.16.17.214/" searchString="" serverPort="80"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+      </Device>
+      <Device id="22" xpos="266" ypos="306" cnnCount="0" devType="0" name="SERVIDOR MAC (121)" autoResolve="0" hostname="172.16.57.11" ipAddress="172.16.57.11">
+        <Monitor id="23" name="TCP 555" descr="Puerto 555 para Equipos Loja (MAC) ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="555"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="24" name="TCP 666" descr="Puerto 666 Empresas Loja (MAC) ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="666"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="31" name="ICMP 200.0.29.121" descr="ICMP MAC (121) ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="ICMP" interval="180" timeout="3" state="1">
+          <Probe packetSize="32" retryCount="2" ttl="64"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="33" name="TCP 8080" descr="Servidor web de la MAC(121) ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="8080"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="55" name="TCP 777" descr="Puerto 777 para Equipos Quito (MAC) ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="777"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="59" name="Servicio Web Taxis" descr="Servicio web para taxis Loja, solicitudes Android" type="HTTP" interval="180" timeout="3" state="1">
+          <Probe all="true" contain="true" request="http://172.16.57.11:7000/" searchString="" serverPort="80"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+      </Device>
+      <Device id="29" xpos="427" ypos="118" cnnCount="0" devType="0" name="SERVIDOR 190.12.61.30" autoResolve="0" hostname="corp-190-12-61-30-loh.puntonet.ec" ipAddress="190.12.61.30">
+        <Monitor id="37" name="ICMP 190.12.61.30" descr="ICMP A LA UMTTTSV 190.12.61.30 ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="ICMP" interval="180" timeout="3" state="1">
+          <Probe packetSize="32" retryCount="2" ttl="64"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="41" name="TCP 7000" descr="Servidor de Buses Loja ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="5" state="1">
+          <Probe request="" serverPort="7000"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="42" name="TCP 5900" descr="Servidor de VNC en UMTTTSV ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="3" state="1">
+          <Probe request="" serverPort="5900"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="62" name="Servicio web UMTTTSV" descr="Servicio web de UMTTTSV, para apliacion Android" type="HTTP" interval="60" timeout="1" state="1">
+          <Probe all="true" contain="true" request="http://190.12.61.30:5801/" searchString="" serverPort="80"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="63" name="Acceso HTTP" descr="Servidor web, puerto 80 UMTTTSV ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="HTTP" interval="180" timeout="3" state="1">
+          <Probe all="true" contain="true" request="http://190.12.61.30/k-bus/index.php" searchString="" serverPort="80"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+      </Device>
+      <Device id="46" xpos="94" ypos="4" cnnCount="0" devType="0" name="Servidor de pruebas 200.0.29.77" autoResolve="0" hostname="KRADAC-PC5" ipAddress="172.18.242.13">
+        <Monitor id="47" name="ICMP" descr="ICMP Computadora de pruebas 200.0.29.77" type="ICMP" interval="180" timeout="3" state="1">
+          <Probe packetSize="32" retryCount="2" ttl="64"/>
+        </Monitor>
+      </Device>
+      <Device id="52" xpos="174" ypos="4" cnnCount="0" devType="0" name="SERVIDOR MAC (121)" autoResolve="0" hostname="172.16.57.11" ipAddress="172.16.57.11">
+        <Monitor id="53" name="TCP 888" descr="Puerto TCP 888 200.0.29.121 Equipos Taxis Zamora ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="5" state="1">
+          <Probe request="" serverPort="888"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+        <Monitor id="54" name="TCP 999" descr="Puerto TCP 999 200.0.29.121 Buses Zamora ENVIADO DESDE DESDE UTPL SERVIDOR DE PRUEBAS 117" type="TCP" interval="180" timeout="5" state="1">
+          <Probe request="" serverPort="999"/>
+          <Action enabled="true" type="2" name="Escribir en el archivo de registro [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <file>C:\Alertas\alerta1\src\datos.tnm</file>
+            <message>&lt;th align=&apos;right&apos;&gt;Servicio:&lt;/th&gt;&lt;td&gt;%MONITOR_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Dispositivo:&lt;/th&gt;&lt;td&gt;%DEVICE_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Nombre de equipo:&lt;/th&gt;&lt;td&gt;%HOST_NAME%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Ip local:&lt;/th&gt;&lt;td&gt;%IP_ADDRESS%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Puerto:&lt;/th&gt;&lt;td&gt;%PORT%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Color:&lt;/th&gt;&lt;td&gt;%MONITOR_COLOR%&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Resultado:&lt;/th&gt;&lt;td&gt;&apos;%RESULT%&apos;&lt;/td&gt;&lt;tr&gt;&lt;th align=&apos;right&apos;&gt;Enviado desde:&lt;/th&gt;&lt;td&gt;Servidor pruebas(200.0.29.117)&lt;/td&gt;&lt;/table&gt;;Descripci&#xF3;n: %DESCRIPTION%</message>
+          </Action>
+          <Action enabled="true" type="5" name="Iniciar aplicaci&#xF3;n [1]" green="false" red="true" black="false" after="3" repeatedly="1" onstartup="0">
+            <application>C:\Alertas\alerta1.exe</application>
+            <cmd_line/>
+            <path/>
+          </Action>
+        </Monitor>
+      </Device>
+    </Group>
+    <Connections/>
+  </NetProject>
